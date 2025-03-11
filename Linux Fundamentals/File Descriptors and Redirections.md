@@ -1,6 +1,6 @@
 ---
 title: File Descriptors and Redirections
-updated: 2025-03-09 00:48:23Z
+updated: 2025-03-09 19:00:31Z
 created: 2025-03-04 01:08:44Z
 ---
 
