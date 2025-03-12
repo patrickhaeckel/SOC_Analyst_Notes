@@ -1,6 +1,6 @@
 ---
 title: Network Services
-updated: 2025-03-11 02:46:55Z
+updated: 2025-03-11 21:56:41Z
 created: 2025-03-09 18:37:00Z
 ---
 
@@ -93,9 +93,9 @@ These modules help improve both security and performance when hosting web applic
 
 &nbsp;
 
-## \*\*Python Web Server
+## Python Web Server
 
-\*\*
+  
 
 ```bash
 This setup allows you to quickly host files using Python’s built-in web server, making them accessible via a browser for easy file transfers.
@@ -112,3 +112,22 @@ python3 -m http.server --directory /home/cry0l1t3/target_files
 # Start a Python web server on a custom port (e.g., 443)  
 python3 -m http.server 443
 ```
+
+&nbsp;
+
+- **cURL**:
+    
+    - A command-line tool for transferring files over various protocols (HTTP, HTTPS, FTP, SFTP, FTPS, SCP).
+    - Useful for remotely controlling and testing websites via the terminal.
+    - Displays website source code as STDOUT, allowing users to inspect client-server communication.
+    - Typically pre-installed on most Linux systems.
+- **Wget**:
+    
+    - An alternative to cURL, mainly used for downloading files from FTP or HTTP servers.
+    - Functions as a command-line download manager.
+    - Unlike cURL, wget stores the downloaded content locally.
+- **Python 3**:
+    
+    - Can be used for data transfer by starting a simple web server from the terminal.
+    - The command is executed in the web server’s root directory, making it accessible via a browser.
+    - Useful for testing and serving local files, such as WordPress installations.

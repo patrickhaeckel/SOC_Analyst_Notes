@@ -1,6 +1,6 @@
 ---
 title: Task Scheduling
-updated: 2025-03-09 00:27:09Z
+updated: 2025-03-12 04:16:56Z
 created: 2025-03-09 00:17:12Z
 ---
 
@@ -39,17 +39,26 @@ WantedBy=multi-user.target  #Ensures it starts in a standard multi-user system.
 
 ```txt
 # System Update
-0 */6 * * * /path/to/update_software.sh
+0 */6 * * * /path/to/update_software.sh  # Runs every 6 hours (at minute 0 of the hour)
 
 # Execute scripts
-0 0 1 * * /path/to/scripts/run_scripts.sh
+0 0 1 * * /path/to/scripts/run_scripts.sh  # Runs at midnight on the 1st day of each month
 
 # Cleanup DB
-0 0 * * 0 /path/to/scripts/clean_database.sh
+0 0 * * 0 /path/to/scripts/clean_database.sh  # Runs at midnight on every Sunday
 
 # Backups
-0 0 * * 7 /path/to/scripts/backup.sh
+0 0 * * 7 /path/to/scripts/backup.sh  # Runs at midnight on every Sunday (same as cleanup)
+
+# Another Example
+* * * * * /home/pato/sshtestdir/rsync_backup.sh  # Runs every minute
+
+# Run every minute
+*/1 * * * * /home/pato/sshtestdir/rsync_backup.sh  # Runs every minute (equivalent to *)
+
 ```
+
+&nbsp;
 
 ┌───────── Minute (0 - 59)  
 │ ┌───────── Hour (0 - 23)  

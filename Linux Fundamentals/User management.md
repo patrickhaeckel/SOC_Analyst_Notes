@@ -1,6 +1,6 @@
 ---
 title: User management
-updated: 2025-03-04 18:17:23Z
+updated: 2025-03-12 03:30:53Z
 created: 2025-03-04 17:47:01Z
 ---
 
@@ -26,7 +26,7 @@ Most common options for each command and what they do:
 | `sudo` | `-u` *user* | Run command as a specific user | `sudo -u username command` |
 |     | `-i` | Open a login shell as root | `sudo -i` |
 |     | `-s` | Run a shell as another user | `sudo -s` |
-| `su` | `-` | Simulate a full login shell | `su - username` |
+| `su` | `-` | Simulate a full login shell. Switch user | `su - username` |
 |     | `-c` *command* | Run a command as another user | `su -c "ls /root" username` |
 | `useradd` | `-m` | Create a home directory | `sudo useradd -m newuser` |
 |     | `-s` *shell* | Specify the user’s default shell | `sudo useradd -s /bin/bash newuser` |
