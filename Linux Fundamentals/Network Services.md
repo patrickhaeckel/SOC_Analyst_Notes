@@ -1,6 +1,6 @@
 ---
 title: Network Services
-updated: 2025-03-11 21:56:41Z
+updated: 2025-03-13 03:18:12Z
 created: 2025-03-09 18:37:00Z
 ---
 
@@ -95,8 +95,6 @@ These modules help improve both security and performance when hosting web applic
 
 ## Python Web Server
 
-  
-
 ```bash
 This setup allows you to quickly host files using Python’s built-in web server, making them accessible via a browser for easy file transfers.
 
@@ -131,3 +129,43 @@ python3 -m http.server 443
     - Can be used for data transfer by starting a simple web server from the terminal.
     - The command is executed in the web server’s root directory, making it accessible via a browser.
     - Useful for testing and serving local files, such as WordPress installations.
+
+&nbsp;
+
+##  **NPM HTTP Server**
+
+NPM is a command-line tool and package manager for the JavaScript runtime environment Node.js, used to install, update, and manage packages (modules) for Node.js projects
+
+```shell
+sudo npm install --global http-server
+```
+
+- **`--global`**: This flag instructs npm to install the package globally, meaning it will be accessible from any directory in your system. Without this flag, the package would only be installed in the current project's `node_modules` folder.
+- **`http-server`**: This is the name of the package being installed. It's a simple, zero-configuration command-line HTTP server.
+
+The command installs the `http-server` package globally, allowing you to easily start a local web server from any directory on your computer. This is very useful for quickly testing static websites or serving files over a local network.
+
+```shell-session
+http-server -p 8080
+```
+
+- It starts a mini web server that will serve the files located in that directory.
+- That web server will be accessible through our web browser (or other network tools) by going to `http://localhost:8080`
+
+&nbsp;
+
+## **PHP Server**
+
+### `php -S 127.0.0.1:8080`
+
+- **Tool**: `php -S` is the built-in development server provided by PHP.
+- **Technology**: It uses **PHP** and is designed to serve PHP files (along with static content).
+- **Usage**: This command is useful when you need to test PHP applications locally without setting up a full web server like Apache or Nginx.
+- **Purpose**: It starts a local web server that serves PHP scripts and other static files, and it allows you to run PHP code in a local development environment.
+- **How it works**: The `-S` option tells PHP to start a server on the specified IP address and port (in this case, `127.0.0.1:8080`). It will process `.php` files and can serve static files too, but it is mainly used for PHP development.
+
+&nbsp;
+
+- ## We use `http-server` if we are working with a Node.js-based project and only need to serve static files.
+    
+- ## We use `php -S` if we are developing a PHP application and want to run it locally without the need for a full web server like Apache or Nginx.

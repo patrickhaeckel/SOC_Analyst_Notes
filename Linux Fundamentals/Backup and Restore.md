@@ -1,6 +1,6 @@
 ---
 title: Backup and Restore
-updated: 2025-03-12 04:06:48Z
+updated: 2025-03-13 02:51:39Z
 created: 2025-03-12 02:15:23Z
 ---
 
@@ -99,7 +99,7 @@ Rsync - Test Auto Syncronization
 
 To enable auto-synchronization using `rsync`, you can use a combination of `cron` and `rsync` to automate the synchronization process. Scheduling the cron job to run at regular intervals ensures that the contents of the two systems are kept in sync.
 
-e create a new script called `RSYNC_Backup.sh`, which will trigger the `rsync` command to sync our local directory with the remote one. However, because we are using a script to perform SSH for the rsync connection, we need to configure key-based authentication. This is to bypass the need to input our password when connecting with SSH.
+We create a new script called `RSYNC_Backup.sh`, which will trigger the `rsync` command to sync our local directory with the remote one. However, because we are using a script to perform SSH for the rsync connection, we need to configure key-based authentication. This is to bypass the need to input our password when connecting with SSH.
 
 ```shell
 sudo apt install openssh-server -y  #Install SSH Server
