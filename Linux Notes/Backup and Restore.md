@@ -1,6 +1,6 @@
 ---
 title: Backup and Restore
-updated: 2025-03-13 02:51:39Z
+updated: 2025-03-15 18:22:33Z
 created: 2025-03-12 02:15:23Z
 ---
 
@@ -95,22 +95,22 @@ rsync -avz -e ssh /path/to/mydirectory user@backup_server:/path/to/backup/direct
 
 &nbsp;
 
-Rsync - Test Auto Syncronization
+## **Rsync - Test Auto Syncronization**
 
 To enable auto-synchronization using `rsync`, you can use a combination of `cron` and `rsync` to automate the synchronization process. Scheduling the cron job to run at regular intervals ensures that the contents of the two systems are kept in sync.
 
 We create a new script called `RSYNC_Backup.sh`, which will trigger the `rsync` command to sync our local directory with the remote one. However, because we are using a script to perform SSH for the rsync connection, we need to configure key-based authentication. This is to bypass the need to input our password when connecting with SSH.
 
-```shell
+```shell-session
 sudo apt install openssh-server -y  #Install SSH Server
 ```
 
-```shell
+```shell-session
 sudo systemctl start ssh  #start SSH Server
 ```
 
 ```shell-session
-sudo systemctl enable ssh   #enable SSH on startup
+sudo systemctl enable ssh  #enable SSH on startup
 ```
 
 ```shell-session
@@ -134,3 +134,45 @@ To ensure the script runs properly, we must grant the necessary permissions. It'
 ```shell-session
 chmod +x rsync_backup.sh
 ```
+
+**After that, we can create a crontab that tells `cron` to run the script every hour at the 0th minute.**
+
+Backup and Restore
+
+```shell-session
+cronjob -e
+```
+
+We can adjust the timing to suit our needs. To do so, the crontab needs the following content:
+
+#### Auto-Sync - Crontab
+
+```shell-session
+0 * * * * /path/to/RSYNC_Backup.sh
+```
+
+&nbsp;
+
+### **Step-by-Step SSH Authentication Process:**
+
+1.  **You Run an SSH Command (or an rsync over SSH)** `ssh test@127.0.0.1`
+    
+    - Your system sees that the remote server (`127.0.0.1`) is listed in `~/.ssh/known_hosts`.
+    - It checks if there is a **private key** (`~/.ssh/id_rsa`) corresponding to the **public key** stored on the remote server.
+2.  **SSH Client Offers the Public Key**
+    
+    - Your SSH client says:  
+        *"Hey, I have a private key. Do you recognize my public key?"*
+    - The server looks inside **`~/.ssh/authorized_keys`** to check if it contains the **matching public key**.
+3.  **The Server Sends a Challenge (Cryptographic Test)**
+    
+    - If the public key is found, the remote server **generates a challenge**—a piece of encrypted data.
+    - The challenge is **encrypted with the public key** stored on the server.
+4.  **Your System Uses the Private Key to Decrypt the Challenge**
+    
+    - Your system **does not send the private key itself** (it is never transmitted).
+    - Instead, it **decrypts the challenge** using the private key stored in `~/.ssh/id_rsa`.
+    - If the decrypted challenge matches the expected response, authentication succeeds.
+5.  **Server Grants Access Without a Password**
+    
+    - Since your system **proved it owns the correct private key**, the SSH server **allows access** without asking for a password.

@@ -1,6 +1,6 @@
 ---
 title: Network Services
-updated: 2025-03-13 03:18:12Z
+updated: 2025-03-15 18:09:51Z
 created: 2025-03-09 18:37:00Z
 ---
 
@@ -63,7 +63,7 @@ tree ~/nfs_sharing_mount  # List the contents of the mounted NFS share
 
 &nbsp;
 
-We've successfully mounted the NFS share, `dev_scripts`, from the target system (10.129.12.17) to our local system at the `target_nfs` mount point. This allows us to browse the share's contents as if we were directly on the target machine. Furthermore, certain techniques exist that could potentially leverage NFS to escalate privileges on the remote system.
+We've successfully mounted the NFS share, `dev_scripts`, from the target system (127.0.0.1) to our local system at the `target_nfs` mount point. This allows us to browse the share's contents as if we were directly on the target machine. Furthermore, certain techniques exist that could potentially leverage NFS to escalate privileges on the remote system.
 
 &nbsp;
 
@@ -132,7 +132,7 @@ python3 -m http.server 443
 
 &nbsp;
 
-##  **NPM HTTP Server**
+## **NPM HTTP Server**
 
 NPM is a command-line tool and package manager for the JavaScript runtime environment Node.js, used to install, update, and manage packages (modules) for Node.js projects
 
