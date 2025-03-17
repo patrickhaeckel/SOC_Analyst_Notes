@@ -1,6 +1,6 @@
 ---
 title: File System Management
-updated: 2025-03-15 19:42:32Z
+updated: 2025-03-15 21:00:10Z
 created: 2025-03-14 05:27:57Z
 ---
 
@@ -144,5 +144,7 @@ To ensure efficiency, swap should be allocated on a dedicated partition or file,
 ### Swap Space for Hibernation
 
 In addition to extending memory, swap space is essential for hibernation. Hibernation saves the system's current state (including open applications and processes) to swap, then powers down the system. When powered back on, the system restores its previous state, allowing users to resume work seamlessly.
+
+&nbsp;
 
 &nbsp;
