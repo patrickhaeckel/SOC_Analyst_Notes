@@ -1,6 +1,6 @@
 ---
 title: Containerization
-updated: 2025-03-18 22:56:22Z
+updated: 2025-03-20 01:42:01Z
 created: 2025-03-15 21:00:12Z
 ---
 
@@ -87,6 +87,8 @@ In production environments, running multiple containers efficiently can be chall
 Using these tools helps ensure your containers run reliably, scale effectively, and integrate seamlessly in a production setting.
 
 # **Understanding Linux Containers (LXC)**
+
+Video: https://www.youtube.com/watch?v=aIwgPKkVj8s&t=1147s
 
 Linux Containers (LXC) is a lightweight virtualization technology that enables multiple **isolated Linux systems** (containers) to run on a single host. It achieves this by using **kernel features** like:
 

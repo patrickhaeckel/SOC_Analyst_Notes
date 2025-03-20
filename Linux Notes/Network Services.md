@@ -1,6 +1,6 @@
 ---
 title: Network Services
-updated: 2025-03-15 18:09:51Z
+updated: 2025-03-20 01:44:28Z
 created: 2025-03-09 18:37:00Z
 ---
 
@@ -11,6 +11,10 @@ The **OpenSSH** configuration can be customized by modifying the **/etc/ssh/sshd
 For instance, SSH enables secure remote login and command execution. It also supports **tunneling and port forwarding**, allowing encrypted data transmission to inspect network and system settings without the risk of interception by third parties.
 
 **NFS**
+
+## **How to Install and Configure an NFS Linux Server and Client**
+
+Video: https://www.youtube.com/watch?v=zmDIfJtCKCk&t=40s
 
 The **Network File System (NFS)** is a protocol that allows us to access and manage files on remote systems as if they were stored locally. It simplifies the management of files across networks. For example, administrators use NFS to centrally store and manage files on both **Linux and Windows systems**, facilitating collaboration and data management. Popular NFS servers for Linux include **NFS-UTILS (Ubuntu)**, **NFS-Ganesha (Solaris)**, and **OpenNFS (Redhat Linux)**.
 
@@ -37,10 +41,6 @@ NFS access rights determine which users and systems can interact with shared dir
 
 &nbsp;
 
-https://www.youtube.com/watch?v=zmDIfJtCKCk&t=40s
-
-&nbsp;
-
 **EXAMPLE:**
 
 ```bash
@@ -64,8 +64,6 @@ tree ~/nfs_sharing_mount  # List the contents of the mounted NFS share
 &nbsp;
 
 We've successfully mounted the NFS share, `dev_scripts`, from the target system (127.0.0.1) to our local system at the `target_nfs` mount point. This allows us to browse the share's contents as if we were directly on the target machine. Furthermore, certain techniques exist that could potentially leverage NFS to escalate privileges on the remote system.
-
-&nbsp;
 
 **Apache Configuration**
 
