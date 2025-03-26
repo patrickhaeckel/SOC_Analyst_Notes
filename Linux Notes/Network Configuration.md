@@ -1,6 +1,6 @@
 ---
 title: Network Configuration
-updated: 2025-03-20 02:05:52Z
+updated: 2025-03-26 02:05:01Z
 created: 2025-03-19 01:44:49Z
 ---
 
@@ -70,7 +70,9 @@ DNS settings allow your system to resolve domain names to IP addresses. To tempo
 
 Add the following lines:
 
-`nameserver 8.8.8.8nameserver 8.8.4.4`
+`nameserver 8.8.8.8`
+
+`nameserver 8.8.4.4`
 
 - **8.8.8.8 & 8.8.4.4** are Google's public DNS servers, ensuring fast and reliable domain resolution.
 
