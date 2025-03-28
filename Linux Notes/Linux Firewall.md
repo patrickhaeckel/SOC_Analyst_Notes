@@ -1,6 +1,6 @@
 ---
 title: Linux Firewall
-updated: 2025-03-27 02:42:56Z
+updated: 2025-03-27 02:51:29Z
 created: 2025-03-26 02:05:30Z
 ---
 
@@ -69,6 +69,8 @@ created: 2025-03-26 02:05:30Z
 # **Understanding Tables and Chains in iptables**
 
 When configuring firewalls on Linux systems, it's essential to understand how **tables** and **chains** work in `iptables`. These components organize and manage firewall rules based on the type of network traffic they handle.
+
+https://www.youtube.com/watch?v=6Ra17Qpj68c&t=52s
 
 * * *
 
